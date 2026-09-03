@@ -17,7 +17,7 @@ body {
   width: 90%;
   max-width: 360px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.272);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
   padding: 2em;
   text-align: center;
 }
@@ -25,34 +25,70 @@ body {
 #form-conrainer {
 }
 
-.input-conrainer {
-  margin-block: 0.7em;
+.form-group {
+  margin-block: 1.1em;
   display: flex;
   flex-direction: column;
   text-align: start;
   gap: 0.25em;
+  position: relative;
 }
 
-.input-conrainer label {
+label {
   font-size: 0.9em;
   font-weight: 600;
+  color: rgb(80, 80, 80);
 }
 
-.input-conrainer input {
+input {
+  border-radius: 0.2em;
   padding: 0.6em 0.8em;
-  border: 1px solid rgba(128, 128, 128, 0.224);
+  border: 2px solid rgba(128, 128, 128, 0.2);
 }
 
-.input-conrainer input::placeholder {
+.form-group.error input {
+  border-color: rgb(221, 73, 73);
+}
+
+.form-group.success input {
+  border-color: rgb(79, 177, 79);
+}
+
+input::placeholder {
   font-size: 0.9em;
+  color: gray;
+  font-weight: 500;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgb(0, 96, 214);
 }
 
 .btn {
   width: 100%;
   margin-top: 0.6em;
-  padding-block: 0.65em;
+  padding-block: 0.7em;
+  font-weight: 500;
   border: none;
-  border-radius: 0.2em;
+  border-radius: 0.3em;
   color: white;
-  background: rgb(55, 142, 224);
+  background-color: rgb(55, 142, 224);
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: rgb(35, 114, 187);
+}
+
+small {
+  visibility: hidden;
+  color:  rgb(221, 73, 73);
+  position: absolute;
+  bottom: -1.3em;
+  font-size: 0.7em;
+}
+
+.form-group.error small {
+  visibility: visible;
 }
